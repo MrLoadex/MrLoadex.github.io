@@ -48,6 +48,7 @@ function tareaRealizada(element){
 
 //Tarea eliminada
 function TareaEliminado(element){
+    element.eliminado = true;
     element.parentNode.parentNode.removeChild(element.parentNode);
 }
 
