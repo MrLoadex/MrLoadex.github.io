@@ -50,6 +50,11 @@ function tareaRealizada(element){
 function TareaEliminado(element){
     element.eliminado = true;
     element.parentNode.parentNode.removeChild(element.parentNode);
+    element.parentNode.removeChild(element.parentNode);
+    element.parentNode.parentNode.removeChild;
+    element.removeChild;
+    element.removeChild(element);
+    element.removeChild(element.parentNode);
 }
 
 //Evento con el botn de agregar
