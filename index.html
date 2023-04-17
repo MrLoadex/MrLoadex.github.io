@@ -1,36 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/1077110e2b.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style.css">
-        <title>ToDo List</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="perfil">
-                <div id="fecha">    </div>
-                <h1>Hola, Julian</h1>
-                <span>Vamos a cumplir las metas</span>
-            </div>
-            <div class="agregar-tarea">
-                <input type="text" id="input" placeholder="Agregar nueva tarea">
-                <i id="enter" class="fas fa-plus-circle"></i>
-            </div>
-            <div class="seccion-tarea">
-                <h3>Estas sosn tus tareas pendientes</h3>
-                <ul id="lista">
-                    <!-- <li>
-                        <i class="far fa-circle co" data="realizado" id="0"></i>
-                        <p class="text">Hacer tarea de Fisica</p>
-                        <i class="fas fa-trash de" data="eliminado" id="0"></i>
-                    </li> -->
-                </ul>
+<html>
+<head>
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Gestor de Tareas</h1>
+        <div class="input-group mb-3">
+            <input type="text" id="input" class="form-control" placeholder="Agregar tarea...">
+            <div class="input-group-append">
+                <button id="btnAgregar" class="btn btn-primary">Agregar</button>
             </div>
         </div>
+        <ul id="lista" class="list-group"></ul>
+    </div>
 
-        <script src="app.js"></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
