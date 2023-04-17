@@ -127,8 +127,17 @@ if(data){
 }
 
 function cargarLista(DATA){
+    limpiarListaVieja(); // Limpia el DOM de los elementos de la lista vieja
     const filteredData = DATA.filter(item => !item.eliminado); // Filtrar tareas eliminadas
     filteredData.forEach(function(i){
         agregarTarea(i.nombre, i.id, i.realizado, i.eliminado)
     });
+}
+
+
+function limpiarListaVieja() {
+    const lista = document.getElementById("lista"); // Reemplaza "lista" con el ID de tu lista
+    while (lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+    }
 }
