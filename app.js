@@ -12,17 +12,14 @@ let LIST = [];
 const FECHA = new Date();
 fecha.innerHTML = FECHA.toLocaleDateString('es-MX',{weekday:'long', month:'short', day:'numeric'});
 
-
 function agregarTarea(tarea,id,realizado,eliminado){
-
     // Si eliminado existe no ejecuta nada
     if(eliminado){
-        return
+        return;
     }
 
     const REALIZADO = realizado ? check : onCheck;
     const LINE = realizado ? LineThrough : '';
-
 
     const elemento = `
         <li id="elemento">
@@ -45,16 +42,18 @@ function tareaRealizada(element){
     LIST[element.id].realizado = LIST[element.id].realizado ? false : true;
 }
 
-
 //Tarea eliminada
 function TareaEliminado(element){
-    const id = element.id;
-    LIST[id].eliminado = true;
-    LIST.splice(id, 1); // Eliminar la tarea de la matriz LIST
+    element.eliminado = true;
     element.parentNode.parentNode.removeChild(element.parentNode);
-    sessionStorage.setItem('TODO', JSON.stringify(LIST));
+    element.parentNode.removeChild(element.parentNode);
+    element.parentNode.parentNode.removeChild;
+    element.removeChild;
+    element.removeChild(element);
+    element.removeChild(element.parentNode);
 }
-//Evento con el botn de agregar
+
+//Evento con el botón de agregar
 btnAgregar.addEventListener('click', () => {
     const tarea = input.value;
     if(tarea){
@@ -66,7 +65,6 @@ btnAgregar.addEventListener('click', () => {
             eliminado: false
         });
     };
-
 
     localStorage.setItem('TODO',JSON.stringify(LIST));
 
@@ -86,16 +84,14 @@ document.addEventListener('keyup', function(event){
                 realizado:false,
                 eliminado: false
             });
-            };
-
+        };
 
         localStorage.setItem('TODO',JSON.stringify(LIST));
-        
+
         input.value = "";
         id++;
     }
 });
-
 
 lista.addEventListener('click',function(event){
     const element = event.target;
@@ -111,33 +107,8 @@ lista.addEventListener('click',function(event){
 
 });
 
-
-//localStorage.setItem('Todo.JOSN.stringify(LIST));
-
-
-//localStorage.getItem('Todo);
-let data = localStorage.getItem('TODO');
-if(data){
-    LIST=JSON.parse(data);
-    id = LIST.length;
-    cargarLista(LIST);
-}else{
-    LIST = [];
-    id = 0;
-}
-
-function cargarLista(DATA){
-    limpiarListaVieja(); // Limpia el DOM de los elementos de la lista vieja
-    const filteredData = DATA.filter(item => !item.eliminado); // Filtrar tareas eliminadas
-    filteredData.forEach(function(i){
-        agregarTarea(i.nombre, i.id, i.realizado, i.eliminado)
-    });
-}
-
-
+// Función para limpiar el DOM de elementos de la lista vieja
 function limpiarListaVieja() {
     const lista = document.getElementById("lista"); // Reemplaza "lista" con el ID de tu lista
     while (lista.firstChild) {
         lista.removeChild(lista.firstChild);
-    }
-}
