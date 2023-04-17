@@ -46,11 +46,8 @@ function tareaRealizada(element){
 function TareaEliminado(element){
     element.eliminado = true;
     element.parentNode.parentNode.removeChild(element.parentNode);
-    element.parentNode.removeChild(element.parentNode);
-    element.parentNode.parentNode.removeChild;
-    element.removeChild;
-    element.removeChild(element);
-    element.removeChild(element.parentNode);
+    LIST[element.id].eliminado = true;
+    localStorage.setItem('TODO',JSON.stringify(LIST));
 }
 
 //Evento con el botón de agregar
@@ -96,7 +93,6 @@ document.addEventListener('keyup', function(event){
 lista.addEventListener('click',function(event){
     const element = event.target;
     const elementData = element.attributes.data.value;
-    //console.log(element.attributes.data.value)
 
     if(elementData === 'realizado'){
         tareaRealizada(element);
@@ -111,4 +107,4 @@ lista.addEventListener('click',function(event){
 function limpiarListaVieja() {
     const lista = document.getElementById("lista"); // Reemplaza "lista" con el ID de tu lista
     while (lista.firstChild) {
-        lista.removeChild(lista.firstChild);
+        lista
