@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Gestor de Tareas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Gestor de Tareas</h1>
-        <div class="input-group mb-3">
-            <input type="text" id="input" class="form-control" placeholder="Agregar tarea...">
-            <div class="input-group-append">
-                <button id="btnAgregar" class="btn btn-primary">Agregar</button>
-            </div>
-        </div>
-        <ul id="lista" class="list-group"></ul>
+    <div class="container">
+        <h1>Gestor de Tareas</h1>
+        <input type="text" id="input" placeholder="Agregar una tarea">
+        <button id="btnAgregar">Agregar</button>
+        <ul id="lista"></ul>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
