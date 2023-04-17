@@ -52,8 +52,8 @@ function TareaEliminado(element){
     LIST[id].eliminado = true;
     element.parentNode.parentNode.removeChild(element.parentNode);
     localStorage.setItem('TODO',JSON.stringify(LIST));
+    LIST = LIST.filter(item => !item.eliminado); // Eliminar tareas eliminadas de la matriz LIST
 }
-
 //Evento con el botn de agregar
 btnAgregar.addEventListener('click', () => {
     const tarea = input.value;
