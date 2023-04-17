@@ -48,13 +48,10 @@ function tareaRealizada(element){
 
 //Tarea eliminada
 function TareaEliminado(element){
-    element.eliminado = true;
+    const id = element.id;
+    LIST[id].eliminado = true;
     element.parentNode.parentNode.removeChild(element.parentNode);
-    element.parentNode.removeChild(element.parentNode);
-    element.parentNode.parentNode.removeChild;
-    element.removeChild;
-    element.removeChild(element);
-    element.removeChild(element.parentNode);
+    localStorage.setItem('TODO',JSON.stringify(LIST));
 }
 
 //Evento con el botn de agregar
