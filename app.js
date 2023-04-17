@@ -50,9 +50,9 @@ function tareaRealizada(element){
 function TareaEliminado(element){
     const id = element.id;
     LIST[id].eliminado = true;
+    LIST.splice(id, 1); // Eliminar la tarea de la matriz LIST
     element.parentNode.parentNode.removeChild(element.parentNode);
-    localStorage.setItem('TODO',JSON.stringify(LIST));
-    LIST = LIST.filter(item => !item.eliminado); // Eliminar tareas eliminadas de la matriz LIST
+    sessionStorage.setItem('TODO', JSON.stringify(LIST));
 }
 //Evento con el botn de agregar
 btnAgregar.addEventListener('click', () => {
@@ -127,7 +127,8 @@ if(data){
 }
 
 function cargarLista(DATA){
-    DATA.forEach(function(i){
-        agregarTarea(i.nombre,i.id,i.realizado,i.eliminado)
+    const filteredData = DATA.filter(item => !item.eliminado); // Filtrar tareas eliminadas
+    filteredData.forEach(function(i){
+        agregarTarea(i.nombre, i.id, i.realizado, i.eliminado)
     });
 }
