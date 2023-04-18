@@ -20,6 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
         return taskLi;
     }
 
+    // Cargar tareas guardadas del almacenamiento local
+    function loadSavedTasks() {
+        const savedTasks = localStorage.getItem('tasks');
+        if (savedTasks) {
+            tasks = JSON.parse(savedTasks);
+            for (const task of tasks) {
+                const taskLi = createTaskLi(task.id, task.text);
+                if (task.status === 'to-do') {
+                    toDoUl.appendChild(taskLi);
+                } else if (task.status === 'doing') {
+                    doingUl.appendChild(taskLi);
+                } else if (task.status === 'done') {
+                    doneUl.appendChild(taskLi);
+                }
+            }
+        }
+    }
+
+    // Guardar tareas en el almacenamiento local
+    function saveTasks() {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
     // Agregar tarea a la lista de To-Do
     document.getElementById('add-task-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -35,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const taskLi = createTaskLi(taskId, taskText);
             toDoUl.appendChild(taskLi);
             taskInput.value = '';
+            saveTasks();
         }
     });
 
@@ -55,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks = tasks.filter(t => t.id !== taskId);
                     taskLi.remove();
                 }
+                saveTasks();
             }
         }
     });
@@ -65,35 +90,4 @@ document.addEventListener('DOMContentLoaded', function() {
         animation: 150,
         onEnd: function(evt) {
             const taskId = evt.item.id;
-            const task = tasks.find(t => t.id === taskId);
-            if (task) {
-                task.status = 'to-do';
-            }
-        }
-    });
-
-    Sortable.create(doingUl, {
-        group: "tasks",
-        animation: 150,
-        onEnd: function(evt) {
-            const taskId = evt.item.id;
-            const task = tasks.find(t => t.id === taskId);
-            if (task) {
-                task.status = 'doing';
-            }
-        }
-    });
-
-    Sortable.create(doneUl, {
-        group: "tasks",
-        animation: 150,
-        onEnd: function(evt) {
-            const taskId = evt.item.id;
-            const task = tasks.find(t => t.id === taskId);
-            if (task) {
-                tasks = tasks.filter(t => t.id !== taskId);
-                taskLi.remove();
-            }
-        }
-    });
-});
+            const task = tasks.find(t
