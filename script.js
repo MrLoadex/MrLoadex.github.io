@@ -55,4 +55,4 @@ function agregarTarea() {
     const tarea = input.value;
     if (tarea) {
         const tareaElemento = document.createElement('li');
-        tareaElemento.innerHTML = `<i class="far fa-check-circle" data="realizado"></i
+        tareaElemento.innerHTML = `<i class="far fa-check-circle" data="realizado"></i> ${tarea}
