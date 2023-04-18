@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Task Manager</title>
+    <title>Kanban Board</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1 class="header">Task Manager</h1>
-        <div class="listas">
-            <div class="lista" id="todo-lista">
-                <h2 class="lista-titulo">To-Do</h2>
-                <ul id="todo-list" class="lista-tareas" ondrop="drop(event, 'todo-list')" ondragover="allowDrop(event)"></ul>
-                <input type="text" id="todo-input" placeholder="Agregar tarea..." class="input-tarea">
-                <button id="todo-button" class="btn-agregar">Agregar</button>
-            </div>
-            <div class="lista" id="doing-lista">
-                <h2 class="lista-titulo">Doing</h2>
-                <ul id="doing-list" class="lista-tareas" ondrop="drop(event, 'doing-list')" ondragover="allowDrop(event)"></ul>
-            </div>
-            <div class="lista" id="done-lista">
-                <h2 class="lista-titulo">Done</h2>
-                <ul id="done-list" class="lista-tareas" ondrop="drop(event, 'done-list')" ondragover="allowDrop(event)"></ul>
-            </div>
-        </div>
+    <div id="kanban-board">
+        <ul id="todo-list" class="list">
+            <h2 class="list-title">To-do</h2>
+            <li class="task" draggable="true">Task 1</li>
+            <li class="task" draggable="true">Task 2</li>
+            <li class="task" draggable="true">Task 3</li>
+        </ul>
+        <ul id="doing-list" class="list">
+            <h2 class="list-title">Doing</h2>
+        </ul>
+        <ul id="done-list" class="list">
+            <h2 class="list-title">Done</h2>
+        </ul>
     </div>
     <script src="app.js"></script>
 </body>
-
 </html>
