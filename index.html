@@ -2,23 +2,24 @@
 <html>
 <head>
     <title>Kanban Board</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="kanban-board">
-        <ul id="todo-list" class="list">
-            <h2 class="list-title">To-do</h2>
-            <li class="task" draggable="true">Task 1</li>
-            <li class="task" draggable="true">Task 2</li>
-            <li class="task" draggable="true">Task 3</li>
-        </ul>
-        <ul id="doing-list" class="list">
+    <div class="kanban-board">
+        <div class="list" id="todo-list">
+            <h2 class="list-title">To-Do</h2>
+        </div>
+        <div class="list" id="doing-list">
             <h2 class="list-title">Doing</h2>
-        </ul>
-        <ul id="done-list" class="list">
+        </div>
+        <div class="list" id="done-list">
             <h2 class="list-title">Done</h2>
-        </ul>
+        </div>
     </div>
-    <script src="app.js"></script>
+    <div class="add-task-container">
+        <input type="text" id="task-input" class="task-input" placeholder="Add Task...">
+        <button id="add-task-btn" class="add-task-btn">Add</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
