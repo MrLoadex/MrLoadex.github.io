@@ -1,49 +1,40 @@
+/* style.css */
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-#kanban-board {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 .list {
-    flex: 1;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin: 0 10px;
 }
 
-.list-title {
-    text-align: center;
-    margin-top: 0;
+.list h2 {
+  margin-top: 0;
 }
 
-.task {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: grab;
+.list-ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  min-height: 200px;
+  padding: 10px;
 }
 
-.task:hover {
-    background-color: #f8f8f8;
+.list-ul li {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
-.list, .task {
-    min-height: 50px;
-}
-
-.list:empty::before {
-    content: "No tasks";
-    color: #888;
-}
-
-#doing-list::before, #done-list::before {
-    content: "";
-    display: block;
-    height: 20px;
+.list-ul li:hover {
+  background-color: #f7f7f7;
 }
