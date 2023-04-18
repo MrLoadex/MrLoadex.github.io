@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kanban Board</title>
+    <title>Tareas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="kanban-board">
-        <div class="list" id="todo-list">
-            <h2 class="list-title">To-Do</h2>
+    <div class="container">
+        <div class="list" id="do-it-list">
+            <h2>Do-It</h2>
+            <ul id="do-it-ul" class="list-ul"></ul>
         </div>
         <div class="list" id="doing-list">
-            <h2 class="list-title">Doing</h2>
+            <h2>Doing</h2>
+            <ul id="doing-ul" class="list-ul"></ul>
         </div>
         <div class="list" id="done-list">
-            <h2 class="list-title">Done</h2>
+            <h2>Done</h2>
+            <ul id="done-ul" class="list-ul"></ul>
         </div>
     </div>
-    <div class="add-task-container">
-        <input type="text" id="task-input" class="task-input" placeholder="Add Task...">
-        <button id="add-task-btn" class="add-task-btn">Add</button>
-    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
