@@ -45,4 +45,37 @@ input[type="text"] {
 
 ul {
     list-style-type: none;
-   
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+li i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.text {
+    flex-grow: 1;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.delete {
+    color: #dc3545;
+}
+
+.complete {
+    color: #28a745;
+}
