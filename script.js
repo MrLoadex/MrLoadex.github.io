@@ -1,9 +1,9 @@
 // script.js
 const input = document.querySelector('#input');
 const btnAgregar = document.querySelector('#btnAgregar');
-const listaPendientes = document.querySelector('#listaPendientes');
-const listaEnProgreso = document.querySelector('#listaEnProgreso');
-const listaRealizadas = document.querySelector('#listaRealizadas');
+const listaToDo = document.querySelector('#listaToDo');
+const listaDoing = document.querySelector('#listaDoing');
+const listaDoIt = document.querySelector('#listaDoIt');
 
 // Cargar tareas almacenadas en el localStorage
 cargarTareas();
@@ -16,36 +16,40 @@ input.addEventListener('keyup', function(event) {
     }
 });
 
-listaPendientes.addEventListener('click', function(event) {
+listaToDo.addEventListener('click', function(event) {
     const element = event.target;
     const elementData = element.attributes.data.value;
 
-    if (elementData === 'realizado') {
-        tareaRealizada(element);
+    if (elementData === 'doing') {
+        tareaDoing(element);
+    } else if (elementData === 'doit') {
+        tareaDoIt(element);
     } else if (elementData === 'eliminado') {
         tareaEliminada(element);
     }
 });
 
-listaEnProgreso.addEventListener('click', function(event) {
+listaDoing.addEventListener('click', function(event) {
     const element = event.target;
     const elementData = element.attributes.data.value;
 
-    if (elementData === 'pendiente') {
-        tareaPendiente(element);
-    } else if (elementData === 'realizado') {
-        tareaRealizada(element);
+    if (elementData === 'todo') {
+        tareaToDo(element);
+    } else if (elementData === 'doit') {
+        tareaDoIt(element);
     } else if (elementData === 'eliminado') {
         tareaEliminada(element);
     }
 });
 
-listaRealizadas.addEventListener('click', function(event) {
+listaDoIt.addEventListener('click', function(event) {
     const element = event.target;
     const elementData = element.attributes.data.value;
 
-    if (elementData === 'pendiente') {
-        tareaPendiente(element);
+    if (elementData === 'todo') {
+        tareaToDo(element);
+    } else if (elementData === 'doing') {
+        tareaDoing(element);
     } else if (elementData === 'eliminado') {
         tareaEliminada(element);
     }
@@ -55,4 +59,7 @@ function agregarTarea() {
     const tarea = input.value;
     if (tarea) {
         const tareaElemento = document.createElement('li');
-        tareaElemento.innerHTML = `<i class="far fa-check-circle" data="realizado"></i> ${tarea}
+        tareaElemento.innerHTML = `<i class="far fa-check-circle" data="doing"></i> ${tarea}<i class="far fa-trash-alt" data="eliminado"></i>`;
+        listaDoIt.appendChild(tareaElemento);
+        input.value = '';
+        guardarTarea(t
