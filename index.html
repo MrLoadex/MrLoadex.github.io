@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Lista de Tareas</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Lista de Tareas</h1>
-    </div>
-    <div class="listas">
-      <div class="lista">
-        <h2>To-do</h2>
-        <ul id="todo-list">
-          <!-- Lista de tareas To-do -->
-        </ul>
-        <input type="text" id="todo-input" placeholder="Nueva tarea">
-        <button id="todo-button">Agregar</button>
-      </div>
-      <div class="lista">
-        <h2>Doing</h2>
-        <ul id="doing-list">
-          <!-- Lista de tareas Doing -->
-        </ul>
-        <input type="text" id="doing-input" placeholder="Nueva tarea">
-        <button id="doing-button">Agregar</button>
-      </div>
-      <div class="lista">
-        <h2>Done</h2>
-        <ul id="done-list">
-          <!-- Lista de tareas Done -->
-        </ul>
-        <input type="text" id="done-input" placeholder="Nueva tarea">
-        <button id="done-button">Agregar</button>
-      </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
+<head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">Task Manager</h1>
+        <div class="listas">
+            <div class="lista">
+                <h2>To-Do</h2>
+                <ul id="todo-list"></ul>
+                <input type="text" id="todo-input" placeholder="Agregar tarea...">
+                <button id="todo-button">Agregar</button>
+            </div>
+            <div class="lista">
+                <h2>Doing</h2>
+                <ul id="doing-list"></ul>
+                <input type="text" id="doing-input" placeholder="Agregar tarea...">
+                <button id="doing-button">Agregar</button>
+            </div>
+            <div class="lista">
+                <h2>Done</h2>
+                <ul id="done-list"></ul>
+                <input type="text" id="done-input" placeholder="Agregar tarea...">
+                <button id="done-button">Agregar</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
+
 </html>
