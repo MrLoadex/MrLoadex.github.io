@@ -1,9 +1,7 @@
 // script.js
 const input = document.querySelector('#input');
-const btnAgregar = document.querySelector('#btnAgregar');
 const lista = document.querySelector('#lista');
 
-btnAgregar.addEventListener('click', agregarTarea);
 input.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
         agregarTarea();
@@ -24,17 +22,13 @@ lista.addEventListener('click', function(event) {
 function agregarTarea() {
     const tarea = input.value;
     if (tarea) {
-        const id = Date.now();
-        const realizado = false;
-        const eliminado = false;
-        const tareaElemento = `
-            <li>
-                <i class="far fa-circle" data="realizado" id="${id}"></i>
-                <p class="text">${tarea}</p>
-                <i class="fas fa-trash" data="eliminado" id="${id}"></i>
-            </li>
+        const tareaElemento = document.createElement('li');
+        tareaElemento.innerHTML = `
+            <i class="far fa-circle" data="realizado"></i>
+            <p class="text">${tarea}</p>
+            <i class="fas fa-trash delete" data="eliminado"></i>
         `;
-        lista.insertAdjacentHTML('beforeend', tareaElemento);
+        lista.appendChild(tareaElemento);
         input.value = '';
     }
 }
