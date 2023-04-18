@@ -1,4 +1,3 @@
-// script.js
 const input = document.querySelector('#input');
 const btnAgregar = document.querySelector('#btnAgregar');
 const listaToDo = document.querySelector('#listaToDo');
@@ -62,4 +61,32 @@ function agregarTarea() {
         tareaElemento.innerHTML = `<i class="far fa-check-circle" data="doing"></i> ${tarea}<i class="far fa-trash-alt" data="eliminado"></i>`;
         listaDoIt.appendChild(tareaElemento);
         input.value = '';
-        guardarTarea(t
+        guardarTarea(tareaElemento);
+    }
+}
+
+function tareaDoing(element) {
+    const tareaElemento = element.parentNode;
+    const tareaTexto = tareaElemento.innerText;
+    const tareaNueva = document.createElement('li');
+    tareaNueva.innerHTML = `<i class="fas fa-check-circle" data="todo"></i> ${tareaTexto}<i class="far fa-trash-alt" data="eliminado"></i>`;
+    listaDoing.appendChild(tareaNueva);
+    tareaElemento.remove();
+    guardarTarea(tareaNueva);
+}
+
+function tareaToDo(element) {
+    const tareaElemento = element.parentNode;
+    const tareaTexto = tareaElemento.innerText;
+    const tareaNueva = document.createElement('li');
+    tareaNueva.innerHTML = `<i class="far fa-check-circle" data="doing"></i> ${tareaTexto}<i class="far fa-trash-alt" data="eliminado"></i>`;
+    listaToDo.appendChild(tareaNueva);
+    tareaElemento.remove();
+    guardarTarea(tareaNueva);
+}
+
+function tareaDoIt(element) {
+    const tareaElemento = element.parentNode;
+    const tareaTexto = tareaElemento.innerText;
+    const tareaNueva = document.createElement('li');
+    tareaNueva.innerHTML = `<i class="fas fa-check-circle" data="todo"></i>
