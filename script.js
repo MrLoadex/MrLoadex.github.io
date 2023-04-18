@@ -1,6 +1,9 @@
 // script.js
 const input = document.querySelector('#input');
+const btnAgregar = document.querySelector('#btnAgregar');
 const lista = document.querySelector('#lista');
+
+btnAgregar.addEventListener('click', agregarTarea);
 
 input.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
@@ -22,24 +25,4 @@ lista.addEventListener('click', function(event) {
 function agregarTarea() {
     const tarea = input.value;
     if (tarea) {
-        const tareaElemento = document.createElement('li');
-        tareaElemento.innerHTML = `
-            <i class="far fa-circle" data="realizado"></i>
-            <p class="text">${tarea}</p>
-            <i class="fas fa-trash delete" data="eliminado"></i>
-        `;
-        lista.appendChild(tareaElemento);
-        input.value = '';
-    }
-}
-
-function tareaRealizada(element) {
-    element.classList.toggle('fa-circle');
-    element.classList.toggle('fa-check-circle');
-    element.nextElementSibling.classList.toggle('line-through');
-}
-
-function tareaEliminada(element) {
-    const tareaElemento = element.parentNode;
-    lista.removeChild(tareaElemento);
-}
+        const tareaElemento = document.createElement
