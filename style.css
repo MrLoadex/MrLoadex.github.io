@@ -1,7 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
+/* Estilos para la lista de tareas */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -14,43 +11,51 @@ body {
 
 .listas {
   display: flex;
-  justify-content: space-around;
 }
 
 .lista {
   flex: 1;
   padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
+  text-align: center;
 }
 
-.lista h2 {
+h2 {
   margin-top: 0;
-  margin-bottom: 20px;
 }
 
-.lista ul {
+ul {
   list-style-type: none;
   padding: 0;
 }
 
-.lista ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+li {
   margin-bottom: 10px;
 }
 
-.lista ul li i {
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
   cursor: pointer;
-  margin-left: 10px;
 }
 
-.lista ul li .fa-check-circle {
-  color: #28a745;
+/* Estilos para los botones de agregar */
+#todo-button {
+  background-color: #4CAF50;
 }
 
-.lista ul li .fa-trash-alt {
-  color: #dc3545;
+#doing-button {
+  background-color: #2196F3;
 }
 
+#done-button {
+  background-color: #9E9E9E;
+}
