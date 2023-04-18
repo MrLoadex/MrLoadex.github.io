@@ -11,18 +11,18 @@
         <h1 class="header">Task Manager</h1>
         <div class="listas">
             <div class="lista" id="todo-lista">
-                <h2>To-Do</h2>
-                <ul id="todo-list"></ul>
-                <input type="text" id="todo-input" placeholder="Agregar tarea...">
-                <button id="todo-button">Agregar</button>
+                <h2 class="lista-titulo">To-Do</h2>
+                <ul id="todo-list" class="lista-tareas" ondrop="drop(event, 'todo-list')" ondragover="allowDrop(event)"></ul>
+                <input type="text" id="todo-input" placeholder="Agregar tarea..." class="input-tarea">
+                <button id="todo-button" class="btn-agregar">Agregar</button>
             </div>
             <div class="lista" id="doing-lista">
-                <h2>Doing</h2>
-                <ul id="doing-list"></ul>
+                <h2 class="lista-titulo">Doing</h2>
+                <ul id="doing-list" class="lista-tareas" ondrop="drop(event, 'doing-list')" ondragover="allowDrop(event)"></ul>
             </div>
             <div class="lista" id="done-lista">
-                <h2>Done</h2>
-                <ul id="done-list"></ul>
+                <h2 class="lista-titulo">Done</h2>
+                <ul id="done-list" class="lista-tareas" ondrop="drop(event, 'done-list')" ondragover="allowDrop(event)"></ul>
             </div>
         </div>
     </div>
