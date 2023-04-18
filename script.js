@@ -40,4 +40,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     doItUl.removeChild(taskLi);
                     doingUl.appendChild(taskLi);
                 } else if (task.status === 'doing') {
-                    task
+                    task.status = 'done';
+                    doingUl.removeChild(taskLi);
+                    doneUl.appendChild(taskLi);
+                } else if (task.status === 'done') {
+                    const taskIndex = tasks.findIndex(t => t.id === taskId);
+                    tasks.splice(taskIndex, 1);
+                    doneUl.removeChild(taskLi);
+                }
+            }
+        }
+    });
+
+    // Crear elemento de lista de tareas (li)
+    function createTaskLi(taskId, taskText) {
+        const taskLi = document.createElement('li');
+        taskLi.id = taskId;
+        taskLi.textContent = taskText;
+        return taskLi;
+    }
+});
