@@ -1,61 +1,63 @@
-/* Estilos para la lista de tareas */
+/* Código CSS (style.css) */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 20px;
+    text-align: center;
 }
 
 .listas {
-  display: flex;
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
 }
 
 .lista {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
+    flex: 1;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 20px;
 }
 
-h2 {
-  margin-top: 0;
+.lista-titulo {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.lista-tareas {
+    list-style-type: none;
+    padding: 0;
 }
 
-li {
-  margin-bottom: 10px;
+.input-tarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-input {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 5px;
+.btn-agregar {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.lista-tareas li {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-/* Estilos para los botones de agregar */
-#todo-button {
-  background-color: #4CAF50;
+.lista-tareas li:hover {
+    background-color: #f8f8f8;
 }
 
-#doing-button {
-  background-color: #2196F3;
-}
-
-#done-button {
-  background-color: #9E9E9E;
-}
