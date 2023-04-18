@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tareas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="list" id="do-it-list">
-            <h2>Do-It</h2>
-            <ul id="do-it-ul" class="list-ul"></ul>
-        </div>
-        <div class="list" id="doing-list">
-            <h2>Doing</h2>
-            <ul id="doing-ul" class="list-ul"></ul>
-        </div>
-        <div class="list" id="done-list">
-            <h2>Done</h2>
-            <ul id="done-ul" class="list-ul"></ul>
-        </div>
+  <h1>Gestor de Tareas</h1>
+  <div class="container">
+    <div class="list" id="to-do-list">
+      <h2>To-Do</h2>
+      <ul id="to-do-ul" class="list-ul"></ul>
+      <form id="add-task-form">
+        <input type="text" id="task-input" placeholder="Agregar tarea..." />
+        <button type="submit">Agregar</button>
+      </form>
     </div>
-
-    <script src="script.js"></script>
+    <div class="list" id="doing-list">
+      <h2>Doing</h2>
+      <ul id="doing-ul" class="list-ul"></ul>
+    </div>
+    <div class="list" id="done-list">
+      <h2>Done</h2>
+      <ul id="done-ul" class="list-ul"></ul>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
