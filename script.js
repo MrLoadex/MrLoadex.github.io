@@ -58,4 +58,42 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // Hacer que los elementos de la lista sean arrastrables
+    Sortable.create(toDoUl, {
+        group: "tasks",
+        animation: 150,
+        onEnd: function(evt) {
+            const taskId = evt.item.id;
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+                task.status = 'to-do';
+            }
+        }
+    });
+
+    Sortable.create(doingUl, {
+        group: "tasks",
+        animation: 150,
+        onEnd: function(evt) {
+            const taskId = evt.item.id;
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+                task.status = 'doing';
+            }
+        }
+    });
+
+    Sortable.create(doneUl, {
+        group: "tasks",
+        animation: 150,
+        onEnd: function(evt) {
+            const taskId = evt.item.id;
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+                tasks = tasks.filter(t => t.id !== taskId);
+                taskLi.remove();
+            }
+        }
+    });
 });
