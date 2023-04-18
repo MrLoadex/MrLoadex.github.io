@@ -18,15 +18,9 @@ input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
-    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    outline: none;
 }
 
 ul {
@@ -43,6 +37,7 @@ li {
 li i {
     margin-right: 10px;
     cursor: pointer;
+    color: #007bff;
 }
 
 .text {
@@ -51,4 +46,12 @@ li i {
 
 .line-through {
     text-decoration: line-through;
+}
+
+.delete {
+    color: #dc3545;
+}
+
+.complete {
+    color: #28a745;
 }
